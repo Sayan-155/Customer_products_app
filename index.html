@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Browse Motorcycles · MotoCompare{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <h1>Find and compare motorcycles</h1>
+  <p>Search, filter, and stack bikes side by side.</p>
+</section>
+
+<section class="filters">
+  <input type="text" id="search-input" placeholder="Search brand or model…">
+
+  <select id="brand-filter">
+    <option value="">All brands</option>
+  </select>
+
+  <select id="category-filter">
+    <option value="">All categories</option>
+  </select>
+
+  <select id="sort-select">
+    <option value="brand-asc">Brand (A–Z)</option>
+    <option value="price_usd-asc">Price (low → high)</option>
+    <option value="price_usd-desc">Price (high → low)</option>
+    <option value="power_hp-desc">Power (high → low)</option>
+    <option value="weight_kg-asc">Weight (light → heavy)</option>
+    <option value="top_speed_kmh-desc">Top speed (high → low)</option>
+    <option value="mileage_kmpl-desc">Mileage/efficiency (best → worst)</option>
+    <option value="engine_cc-desc">Engine size (large → small)</option>
+  </select>
+
+  <button id="clear-filters" type="button">Clear</button>
+</section>
+
+<p id="result-count" class="muted"></p>
+
+<section id="moto-grid" class="grid">
+  <!-- cards injected by JS -->
+</section>
+
+<div id="empty-state" class="empty-state" style="display:none;">
+  No motorcycles match those filters.
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/browse.js') }}"></script>
+{% endblock %}

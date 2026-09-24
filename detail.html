@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Motorcycle Details · MotoCompare{% endblock %}
+
+{% block content %}
+<a class="back-link" href="{{ url_for('index') }}">&larr; Back to browse</a>
+
+<section id="detail-root" data-moto-id="{{ moto_id }}">
+  <p class="muted">Loading…</p>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/detail.js') }}"></script>
+{% endblock %}

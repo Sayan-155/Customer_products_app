@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Compare Motorcycles · MotoCompare{% endblock %}
+
+{% block content %}
+<h1>Compare</h1>
+<p class="muted">Pick up to 4 bikes from the browse page, then compare their specs here.</p>
+
+<div id="compare-picker" class="compare-picker">
+  <!-- slots injected by JS -->
+</div>
+
+<div id="compare-table-wrap" class="table-wrap">
+  <p class="muted" id="compare-empty">Add motorcycles from the browse page to compare them.</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/compare.js') }}"></script>
+{% endblock %}
